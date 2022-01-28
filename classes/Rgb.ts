@@ -5,7 +5,7 @@ export class Rgb {
     g: number
     b: number
 
-    constructor(r:number, g:number, b:number){
+    constructor(r =randomInt(255), g=randomInt(255), b=randomInt(255)){
         this.r = r
         this.g = g
         this.b = b

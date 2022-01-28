@@ -2,12 +2,12 @@ import Head from 'next/head'
 // import {TEXT} from '../constants/text'
 // import { Paragraph } from '../components/Paragraph'
 import { DotBox } from '../components/shapes/DotBox'
-import { randomRgb, randomHsla} from '../functions'
+import {Rgb} from '../classes'
+import {INCREMENT} from '../constants'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const INCREMENT = 10
-  const color = randomRgb()
+  const color = new Rgb()
   const arr = new Array(30).fill(undefined)
   return (
     <div className={styles.container}>
