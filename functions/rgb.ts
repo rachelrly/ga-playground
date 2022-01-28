@@ -1,13 +1,11 @@
-/**
- * 
- * rgb: {
- *      r: 0-255,
- *      g: 0-255,
- *      b: 0-255
- * }
- */
 
-export function randomRgb(){
+export interface Rgb {
+    r: number,
+    g: number,
+    b: number
+}
+
+export function randomRgb():Rgb{
     return {
         r: randomInt255(),
         g: randomInt255(),
@@ -15,12 +13,12 @@ export function randomRgb(){
     }
 }
 
-export function rgbToString({r, g, b}){
+export function rgbToString({r, g, b}):string{
     return`rgb(${r}, ${g}, ${b})`
 }
 
-// theoretically, props are r, g, b
-export function incrementRgbProp(rgb, prop, increment){
+
+export function incrementRgbProp(rgb: Rgb, prop: keyof Rgb, increment: number):Rgb{
     return {...rgb, [prop]: incrementValue(rgb[prop], increment)}
 }
 
