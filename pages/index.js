@@ -25,13 +25,13 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Generative Art Playground</title>
+        <title>Generative Color Playground</title>
         <meta name="description" content="A place for exploration" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1>Generative art playground</h1>
+        <h1>Generative color playground</h1>
         <Button content="Click to change color" onClick={handleChangeColor}/>
         <Button content={hasBg ? 'Hide background colors' : 'Show background colors'} onClick={handleInvertBg} inverted={hasBg}/>
 

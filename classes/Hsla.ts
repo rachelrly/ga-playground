@@ -6,7 +6,7 @@ export class Hsla {
     l: number // 0-100%
     a?: number // 0-1
 
-    constructor(h = randomInt(255), s = randomInt(100), l = randomInt(100), a?:number){
+    constructor(h = randomInt(255), s = randomInt(100), l = randomInt(100), a = Number(Math.random().toFixed())){
         this.h = h
         this.s = s 
         this.l  = l
