@@ -1,4 +1,4 @@
-import { randomInt } from "../functions"
+import { randomInt, incrementValue } from "../functions"
 
 export class Hsla {
     h: number // 0-255
@@ -6,7 +6,7 @@ export class Hsla {
     l: number // 0-100%
     a?: number // 0-1
 
-    constructor(h:number, s:number, l:number, a?:number){
+    constructor(h = randomInt(255), s = randomInt(100), l = randomInt(100), a?:number){
         this.h = h
         this.s = s 
         this.l  = l
@@ -23,5 +23,12 @@ export class Hsla {
         this.s = randomInt(100),
         this.l = randomInt(100),
         this.a = Math.random()
+    }
+
+    public increment(prop: 'h' | 's' | 'l' | 'a', increment: number){
+        if (prop === 'h') this.h = incrementValue(this.h, increment, 255)
+        else if (prop === 'a') console.log('NOT VALIDATING ALPHA RN')
+        // assumed to be 's' or 'l' percentage
+        else this[prop] = incrementValue(this[prop], increment, 100)
     }
 }

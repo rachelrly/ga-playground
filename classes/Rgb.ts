@@ -1,4 +1,4 @@
-import { randomInt, incrementValue255 } from "../functions"
+import { randomInt, incrementValue } from "../functions"
 
 export class Rgb {
     r: number
@@ -22,7 +22,7 @@ export class Rgb {
     }
 
     public increment(prop: 'r' | 'g' | 'b', increment: number){
-        this[prop]= incrementValue255(this[prop], increment)
+        this[prop]= incrementValue(this[prop], increment, 255)
     }
 
 }
