@@ -36,7 +36,7 @@ export default function Home() {
         <Button content={hasBg ? 'Hide background colors' : 'Show background colors'} onClick={handleInvertBg} inverted={hasBg}/>
 
         <div className={styles.boxWrapper}>
-        {arr.map((_, index)=> <DotBox key={index} hasBg={hasBg} prop='h' dotProp='l' increment={index * INCREMENT} color={color}/>
+        {arr.map((_, index)=> <DotBox key={index} index={index} hasBg={hasBg} prop='h' dotProp='l' increment={index * INCREMENT} color={color}/>
           )}
         </div>
       </main>

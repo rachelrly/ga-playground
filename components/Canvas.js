@@ -1,5 +1,6 @@
 import {useRef, useEffect} from 'react'
 import { INCREMENT } from '../constants'
+import { randomInt } from '../functions'
 
 export function Canvas(props){
     const canvasRef = useRef(null)
@@ -10,16 +11,16 @@ export function Canvas(props){
         const context = canvas.getContext('2d')
         canvas.width = window.innerWidth 
         context.fillStyle = props.hasBg ?  props.color.stringify() : 'white'
-        context.fillRect(0, 0, window.innerWidth, 100)
+        context.fillRect(0, -10, window.innerWidth, 500)
 
         // make circle
         const dotColor = props.color
-        dotColor.increment(props.dotProp, INCREMENT/2)
-        draw(context, dotColor.stringify(), {x: context.canvas.width/4, y: context.canvas.height/4, r: 30})
-        dotColor.increment(props.dotProp, INCREMENT)
-        draw(context, dotColor.stringify(), {x: context.canvas.width/2, y: context.canvas.height/2, r: 30})
-        dotColor.increment(props.dotProp, INCREMENT*2)
-        draw(context, dotColor.stringify(), {x: context.canvas.width, y: context.canvas.height, r: 30})
+        dotColor.increment(props.dotProp, randomInt(10))
+        draw(context, dotColor.stringify(), {x: randomInt(window.innerWidth), y: randomInt(200), r: randomInt(50)})
+        dotColor.increment(props.dotProp, randomInt(10))
+        draw(context, dotColor.stringify(), {x: randomInt(window.innerWidth), y: randomInt(200), r: randomInt(50)})
+        dotColor.increment(props.dotProp, randomInt(10))
+        draw(context, dotColor.stringify(), {x: randomInt(window.innerWidth), y: randomInt(200), r: randomInt(50)})
     },[draw, props.color, props.hasBg])
     
     return (
