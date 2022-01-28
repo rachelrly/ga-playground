@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react'
-import { INCREMENT } from '../constants'
-import { randomInt } from '../functions'
+import { INCREMENT } from '../../constants'
+import { randomInt } from '../../functions'
 
 export function Canvas(props){
     const canvasRef = useRef(null)

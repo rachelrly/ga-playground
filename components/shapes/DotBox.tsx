@@ -1,4 +1,4 @@
-import { Canvas } from "../Canvas"
+import { Canvas } from "./DotCanvas"
 import {dot} from '../../functions'
 import { useEffect } from "react"
 // import { Colors } from "../../classes"

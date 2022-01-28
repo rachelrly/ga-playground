@@ -6,7 +6,7 @@ export class Hsla {
     l: number // 0-100%
     a?: number // 0-1
 
-    constructor(h = randomInt(255), s = randomInt(100), l = randomInt(100), a?:number){
+    constructor(h = randomInt(255), s = 100 - randomInt(50), l = randomInt(50), a = Number(Math.random().toFixed(1))){
         this.h = h
         this.s = s 
         this.l  = l
@@ -27,10 +27,7 @@ export class Hsla {
 
     public increment(prop: 'h' | 's' | 'l' | 'a', increment: number){
         if (prop === 'h') {
-            console.log('H BEFORE INCREMENT', this.h)
             this.h = incrementValue(this.h, increment, 255)
-            console.log('H AFTER INCREMENT', this.h)
-
         }
         else if (prop === 'a') {
             if (Boolean(this.a)) this.a = incrementValue(this.a, increment, 1)
