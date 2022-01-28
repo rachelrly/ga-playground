@@ -1,3 +1,4 @@
+import { incrementValue255, randomInt } from "./utils"
 
 export interface Rgb {
     r: number,
@@ -7,9 +8,9 @@ export interface Rgb {
 
 export function randomRgb():Rgb{
     return {
-        r: randomInt255(),
-        g: randomInt255(),
-        b: randomInt255()
+        r: randomInt(255),
+        g: randomInt(255),
+        b: randomInt(255)
     }
 }
 
@@ -19,17 +20,5 @@ export function rgbToString({r, g, b}):string{
 
 
 export function incrementRgbProp(rgb: Rgb, prop: keyof Rgb, increment: number):Rgb{
-    return {...rgb, [prop]: incrementValue(rgb[prop], increment)}
-}
-
-function incrementValue(initial, increment){
-    // numeric validation for 0-255 range
-    const sum = initial + increment
-    if (sum <= 255 && sum >= 0) return sum
-    else return (-255 + sum) * -1
-     
-}
-
-function randomInt255(){
-    return Math.floor(Math.random()*255)
+    return {...rgb, [prop]: incrementValue255(rgb[prop], increment)}
 }

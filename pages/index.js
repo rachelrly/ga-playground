@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import {TEXT} from '../constants/text'
 // import { Paragraph } from '../components/Paragraph'
 import { DotBox } from '../components/shapes/DotBox'
-import { randomRgb, incrementRgbProp} from '../functions'
+import { randomRgb, randomHsla} from '../functions'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
