@@ -1,13 +1,14 @@
 import Head from 'next/head'
-import {TEXT} from '../constants/text'
-import { Paragraph } from '../components/Paragraph'
-import { Canvas } from '../components/Canvas'
-import {dot, randomRgb, incrementRgbProp} from '../functions'
+// import {TEXT} from '../constants/text'
+// import { Paragraph } from '../components/Paragraph'
+import { DotBox } from '../components/shapes/DotBox'
+import { randomRgb, incrementRgbProp} from '../functions'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const INCREMENT = 10
   const color = randomRgb()
+  const arr = new Array(30).fill(undefined)
   return (
     <div className={styles.container}>
       <Head>
@@ -18,18 +19,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>Generative art playground</h1>
-        {/* <Paragraph content={TEXT} />   */}
-        <Canvas draw={dot} color={color}/>
-        {/* <Paragraph content={TEXT} />  */}
-        <Canvas draw={dot} color={incrementRgbProp(color, 'r', INCREMENT)}/>
-        <Canvas draw={dot} color={incrementRgbProp(color, 'r', INCREMENT * 2)}/>
-        {/* <Paragraph content={TEXT} />  */}
-        <Canvas draw={dot} color={incrementRgbProp(color, 'r', INCREMENT * 3)}/>
-        <Canvas draw={dot} color={incrementRgbProp(color, 'r', INCREMENT * 4)}/>
-        <Canvas draw={dot} color={incrementRgbProp(color, 'r', INCREMENT * 5)}/>
-
-        <Paragraph content={TEXT} /> 
-        <Paragraph content={TEXT} />    
+        {arr.map((_, index)=> <DotBox key={index} prop='r' increment={index * INCREMENT} color={color}/>
+          )}
+        {/* <Paragraph content={TEXT} /> 
+        <Paragraph content={TEXT} />     */}
       </main>
     </div>
   )

@@ -2,7 +2,7 @@
   "name": "canvas-playground",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "tsc && next dev --port 5558",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
