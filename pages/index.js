@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import {TEXT} from '../constants/text'
 import { Paragraph } from '../components/Paragraph'
+import { Canvas } from '../components/Canvas'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -16,7 +17,11 @@ export default function Home() {
         <h1 className={styles.title}>
           Canvas Playground
         </h1>
+        <Canvas />
         <Paragraph content={TEXT} /> 
+        <Canvas />
+        <Canvas />
+ 
         <Paragraph content={TEXT} /> 
         <Paragraph content={TEXT} /> 
         <Paragraph content={TEXT} />    
