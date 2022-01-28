@@ -13,9 +13,13 @@ export function Canvas(props){
 
         // make circle
         const dotColor = props.color
+        dotColor.increment(props.dotProp, INCREMENT/2)
+        draw(context, dotColor.stringify(), {x: context.canvas.width/4, y: context.canvas.height/4, r: 30})
         dotColor.increment(props.dotProp, INCREMENT)
-        draw(context, dotColor.stringify())
-    },[draw])
+        draw(context, dotColor.stringify(), {x: context.canvas.width/2, y: context.canvas.height/2, r: 30})
+        dotColor.increment(props.dotProp, INCREMENT*2)
+        draw(context, dotColor.stringify(), {x: context.canvas.width, y: context.canvas.height, r: 30})
+    },[draw, props.color])
     
     return (
         <canvas ref={canvasRef} {...props}/>

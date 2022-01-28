@@ -26,7 +26,12 @@ export class Hsla {
     }
 
     public increment(prop: 'h' | 's' | 'l' | 'a', increment: number){
-        if (prop === 'h') this.h = incrementValue(this.h, increment, 255)
+        if (prop === 'h') {
+            console.log('H BEFORE INCREMENT', this.h)
+            this.h = incrementValue(this.h, increment, 255)
+            console.log('H AFTER INCREMENT', this.h)
+
+        }
         else if (prop === 'a') {
             if (Boolean(this.a)) this.a = incrementValue(this.a, increment, 1)
             else this.a = Math.random()
