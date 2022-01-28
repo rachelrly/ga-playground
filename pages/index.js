@@ -10,13 +10,16 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const [color, setColor] = useState(new Hsla())
+  const [hasBg, setHasBg] = useState(true)
   const arr = new Array(30).fill(undefined)
   
   function handleChangeColor(){
-    console.log('HANDLING NEW COLOR -------------------------------------------------------------------------------------------------')
-    console.log('HANDLE CHANGE COL RUNNING')
     const newColor = new Hsla()
     setColor(newColor)
+  }
+
+  function handleInvertBg(){
+    setHasBg(!hasBg)
   }
 
   return (
@@ -30,8 +33,10 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Generative art playground</h1>
         <Button content="Click to change color" onClick={handleChangeColor}/>
-        <div >
-        {arr.map((_, index)=> <DotBox key={index} prop='h' dotProp='l' increment={index * INCREMENT} color={color}/>
+        <Button content={hasBg ? 'Hide background colors' : 'Show background colors'} onClick={handleInvertBg} inverted={hasBg}/>
+
+        <div className={styles.boxWrapper}>
+        {arr.map((_, index)=> <DotBox key={index} index={index} hasBg={hasBg} prop='h' dotProp='l' increment={index * INCREMENT} color={color}/>
           )}
         </div>
       </main>

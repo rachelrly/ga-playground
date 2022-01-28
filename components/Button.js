@@ -1,6 +1,6 @@
-export function Button({content, onClick}){
+export function Button({content, onClick, inverted}){
     return (
-        <button onClick={onClick}>
+        <button onClick={onClick} className={inverted ? 'inverted' : ''}>
             <span>{content}</span>
         </button>
     )

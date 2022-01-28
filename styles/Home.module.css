@@ -108,6 +108,12 @@
   margin-left: 0.5rem;
 }
 
+.boxWrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
