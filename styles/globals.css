@@ -11,6 +11,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: 1px solid black;
+  background-color: inherit;
+  padding: 0.8rem 0;
+  box-sizing: border-box;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
 }
