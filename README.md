@@ -1,10 +1,9 @@
-# Generative Art Playground
+# Generative Color Playground
 
-Exporing decorative effects for personal website
+Exporing decorative effects for personal website with HSLA and RGB color classes
 
-# Codebase
 
-## /functions
 
-### /rgb
+
+
 
