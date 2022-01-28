@@ -14,8 +14,8 @@ export class Hsla {
     }
 
     public stringify(){
-        if (this.a) return `hsla(${this.h}, ${this.s}%, ${this.l}%, ${this.a})`
-        return `hsl(${this.h}, ${this.s}%, ${this.l})`
+        if (Boolean(this.a)) return `hsla(${this.h}, ${this.s}%, ${this.l}%, ${this.a})`
+        return `hsl(${this.h}, ${this.s}%, ${this.l}%)`
     }
 
     public generateRandom(){

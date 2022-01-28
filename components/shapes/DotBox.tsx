@@ -8,8 +8,8 @@ interface DotBoxProps {
     prop: string // FIX ME should be keyof class properties
 }
 
-export function DotBox({color, increment = 0, prop='r'}){
+export function DotBox({color, increment = 0, prop, dotProp}){
     const newColor = color
     newColor.increment(prop, increment)
-    return <Canvas draw={dot} color={newColor} increment={increment}/>
+    return <Canvas draw={dot} color={newColor} dotProp={dotProp} increment={increment}/>
 }
