@@ -9,7 +9,7 @@ export function Canvas(props){
         const canvas = canvasRef.current
         const context = canvas.getContext('2d')
         context.fillStyle = props.color.stringify()
-        context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+        context.fillRect(0, 0, window.deviceWidth, 100)
 
         // make circle
         const dotColor = props.color

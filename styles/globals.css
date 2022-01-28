@@ -19,6 +19,13 @@ button {
   margin-bottom: 0.8rem;
   width: 100%;
   cursor: pointer;
+  transition: background-color 40ms ease-in;
+}
+
+button.inverted {
+  background-color: black;
+  color: white;
+  transition: background-color 40ms ease-out;
 }
 
 * {
