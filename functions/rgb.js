@@ -28,9 +28,8 @@ function incrementValue(initial, increment){
     // numeric validation for 0-255 range
     const sum = initial + increment
     if (sum <= 255 && sum >= 0) return sum
-    // CHANGE ME RACHEL
-    // THIS IS NOT WHAT WE WANT
-    else return (-255 - increment) * -1
+    else return (-255 + sum) * -1
+     
 }
 
 function randomInt255(){

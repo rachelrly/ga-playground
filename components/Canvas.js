@@ -1,4 +1,5 @@
 import {useRef, useEffect} from 'react'
+import { rgbToString } from '../functions'
 
 export function Canvas(props){
     const canvasRef = useRef(null)
@@ -7,10 +8,10 @@ export function Canvas(props){
         const canvas = canvasRef.current
         const context = canvas.getContext('2d')
         //Our first draw
-        context.fillStyle = '#000000'
+        context.fillStyle = rgbToString(props.color)
         context.fillRect(0, 0, context.canvas.width, context.canvas.height)
 
-        draw(context)
+        draw(context, props.color)
     },[draw])
     
     return (

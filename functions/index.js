@@ -1,2 +1,2 @@
-export * from './grid'
+export * from './dot'
 export * from './rgb'
